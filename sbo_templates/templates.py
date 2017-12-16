@@ -76,6 +76,7 @@ if [ -x /usr/bin/update-mime-database ]; then
   /usr/bin/update-mime-database usr/share/mime >/dev/null 2>&1
 fi
 
+# If other icon themes are installed, then add to/modify this as needed
 if [ -e usr/share/icons/hicolor/icon-theme.cache ]; then
   if [ -x /usr/bin/gtk-update-icon-cache ]; then
     /usr/bin/gtk-update-icon-cache usr/share/icons/hicolor >/dev/null 2>&1
@@ -95,6 +96,9 @@ if [ -x /usr/bin/install-info ]; then
   chroot . /usr/bin/install-info --info-dir=/usr/info /usr/info/blah.gz 2> /dev/null
 fi
 
+# WARNING
+# When upgradepkg is used, doinst.sh gets run twice. So don't put
+# anything here that takes a long time to run.
 %s################################################################################
 """ % (cl, cl, cl, cl, cl)
 
