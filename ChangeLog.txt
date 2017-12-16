@@ -1,0 +1,28 @@
+1.0.0 - 16/12/2017
+Updated:
+ - Fix read slack-desc file if exist.
+Feature:
+ - Switch to python3.
+
+0.14.0 - 16/12/2017
+Feature:
+- Added haskell-tamplate.
+- Switch to i586 arch. 
+
+0.12.0 - 25/04/2015
+Feature:
+- Added change working directory.
+- Added README create file.
+- Added doinst.sh create file.
+- Read online slackbuilds.org templates. 
+- Reading existing files for editing.
+Updated:
+- Fix slack-desc lengths.
+
+0.11.0 - 23/04/2015
+Updated:
+- Fix reset data after browse.
+
+0.10.0 - 23/04/2015
+Feature:
+- Released
