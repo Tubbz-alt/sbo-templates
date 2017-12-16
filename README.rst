@@ -56,20 +56,20 @@ Install
 
     or
     
-    $ pip install sbo-templates --upgrade
+    $ pip3 install sbo-templates --upgrade
     
     or
 
-    $ pip install sbo-templates-<version>.tar.gz
+    $ pip3 install sbo-templates-<version>.tar.gz
 
 
 Requirements
 ------------
 
-- Requires Python 2.7 or later in the 2.x series. It has been tested with 
-  Python 2.7.
+- Requires Python 3.6 or later in the 3.x series. It has been tested with 
+  Python 3.6.3.
 
-- python2-pythondialog >= 3.2.2
+- python3-pythondialog >= 3.4.0
 
 
 Usage

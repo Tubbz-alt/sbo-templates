@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 # setup.py file is part of sbo-templates.
