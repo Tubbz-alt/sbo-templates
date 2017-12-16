@@ -6,8 +6,6 @@
     :target: https://landscape.io/github/dslackw/sbo-templates/master
 .. image:: https://img.shields.io/codacy/d586be6aeca9468e85bd057262bffc8e.svg
     :target: https://www.codacy.com/public/dzlatanidis/sbo-templates/dashboard
-.. image:: https://img.shields.io/pypi/dm/sbo-templates.svg
-    :target: https://pypi.python.org/pypi/sbo-templates
 .. image:: https://img.shields.io/badge/license-GPLv3-blue.svg
     :target: https://github.com/dslackw/sbo-templates
 .. image:: https://img.shields.io/github/stars/dslackw/sbo-templates.svg
