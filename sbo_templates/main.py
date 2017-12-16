@@ -81,9 +81,9 @@ class SBoTemplates(object):
         """
         if len(self.args) > 1:
             self.__usage()
-        elif len(self.args) == 1 and self.args[0] == "--help":
+        elif len(self.args) == 1 and self.args[0] in ["-h", "--help"]:
             self.__usage()
-        elif len(self.args) == 1 and self.args[0] == "--version":
+        elif len(self.args) == 1 and self.args[0] in ["-v", "--version"]:
             self.__version()
         elif len(self.args) < 1:
             self.args = ['appname']
@@ -100,8 +100,8 @@ class SBoTemplates(object):
         args = [
             "Usage: sbo-templates <application>\n",
             "Optional arguments:",
-            "  --help           display this help and exit",
-            "  --version        print version and exit",
+            "  -h, --help           display this help and exit",
+            "  -v, --version        print version and exit",
         ]
         for opt in args:
             print("{0}".format(opt))
