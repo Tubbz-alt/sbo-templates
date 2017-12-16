@@ -1,2 +1,2 @@
 # nano
-python2-pythondialog>=3.2.2
+python3-pythondialog>=3.4.0

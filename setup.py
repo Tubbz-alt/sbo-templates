@@ -47,15 +47,13 @@ setup(
     package_data={"": ["LICENSE", "README.rst", "CHANGELOG"]},
     install_requires=['python2-pythondialog>=3.2.2'],
     classifiers=[
-        "Development Status :: 3 - Alpha",
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 5 - Alpha",
+        "Development Status :: 5 - Alpha",
         "License :: OSI Approved :: GNU General Public License v3 or later "
         "(GPLv3+)",
         "Operating System :: Unix",
         "Programming Language :: Python",
-        "Programming Language :: Python :: 2.5",
-        "Programming Language :: Python :: 2.6",
-        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.6",
         ],
     long_description=open("README.rst").read()
 )
