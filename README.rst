@@ -69,7 +69,7 @@ Requirements
 - Requires Python 3.6 or later in the 3.x series. It has been tested with 
   Python 3.6.3.
 
-- python3-pythondialog >= 3.4.0
+- pythondialog >= 3.4.0
 
 
 Usage
