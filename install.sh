@@ -24,7 +24,7 @@
 __version() {
 # Grab version from __metadata__.py file
 cat sbo_templates/__metadata__.py | grep "__version_info__ = (" \
-    | tr -d [[:space:]] | cut -c19-24 | tr , .
+    | tr -d [[:space:]] | cut -c19-23 | tr , .
 }
 
 PRGNAM=sbo-templates

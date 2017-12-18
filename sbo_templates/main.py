@@ -21,6 +21,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
+
 from __future__ import unicode_literals
 import os
 import sys
@@ -48,11 +49,9 @@ class SBoTemplates(object):
         self.d = Dialog(dialog="dialog")
         self.d.set_background_title("SlackBuild.org Templates {0}".format(
             __version__))
-
         self.args = sys.argv
         self.args.pop(0)
         self.__cli()
-
         self.source = ""
         self.chk_md5 = ""
         self.pwd = ""
