@@ -45,10 +45,9 @@ setup(
     author_email=__email__,
     url=__website__,
     package_data={"": ["LICENSE", "README.rst", "CHANGELOG"]},
-    install_requires=['python2-pythondialog>=3.2.2'],
+    install_requires=['pythondialog>=3.4.0'],
     classifiers=[
-        "Development Status :: 5 - Alpha",
-        "Development Status :: 5 - Alpha",
+        "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: GNU General Public License v3 or later "
         "(GPLv3+)",
         "Operating System :: Unix",
