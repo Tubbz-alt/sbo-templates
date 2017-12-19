@@ -31,11 +31,11 @@ import hashlib
 import subprocess
 from datetime import date
 from dialog import Dialog
-from templates import (
+from .templates import (
     SlackBuilds,
     doinst
 )
-from __metadata__ import __version__
+from .__metadata__ import __version__
 
 
 locale.setlocale(locale.LC_ALL, '')
