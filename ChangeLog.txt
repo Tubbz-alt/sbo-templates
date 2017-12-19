@@ -1,3 +1,7 @@
+1.0.1 - 19/12/2017
+Updated:
+- Fix setup requirements and classifiers.
+
 1.0.0 - 16/12/2017
 Updated:
  - Fix read slack-desc file if exist.
