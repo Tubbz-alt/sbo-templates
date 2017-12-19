@@ -80,8 +80,8 @@ Usage
     Usage: sbo-templates <application>
 
     Optional arguments:
-      --help           display this help and exit
-      --version        print version and exit
+      -h, --help           display this help and exit
+      -v, --version        print version and exit
 
 
 Screenshots
