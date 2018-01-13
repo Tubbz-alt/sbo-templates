@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/python2
 # -*- coding: utf-8 -*-
 
 # __metadata__.py file is part of sbo-templates.
 
-# Copyright 2015-2017 Dimitris Zlatanidis <d.zlatanidis@gmail.com>
+# Copyright 2015-2018 Dimitris Zlatanidis <d.zlatanidis@gmail.com>
 # All rights reserved.
 
 # SBo tool for managing templates.
@@ -24,8 +24,8 @@
 
 __prog__ = "sbo-templates"
 __author__ = "dslackw"
-__copyright__ = 2015-2017
-__version_info__ = (1, 0, 1)
+__copyright__ = 2015-2018
+__version_info__ = (1, 0, 2)
 __version__ = "{0}.{1}.{2}".format(*__version_info__)
 __license__ = "GNU General Public License v3 (GPLv3)"
 __email__ = "d.zlatanidis@gmail.com"

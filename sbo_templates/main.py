@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/python2
 # -*- coding: utf-8 -*-
 
 # main.py file is part of sbo-templates.
 
-# Copyright 2015-2017 Dimitris Zlatanidis <d.zlatanidis@gmail.com>
+# Copyright 2015-2018 Dimitris Zlatanidis <d.zlatanidis@gmail.com>
 # All rights reserved.
 
 # SBo tool for managing templates.
@@ -31,11 +31,11 @@ import hashlib
 import subprocess
 from datetime import date
 from dialog import Dialog
-from .templates import (
+from templates import (
     SlackBuilds,
     doinst
 )
-from .__metadata__ import __version__
+from __metadata__ import __version__
 
 
 locale.setlocale(locale.LC_ALL, '')

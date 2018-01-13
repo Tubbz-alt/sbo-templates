@@ -1,9 +1,9 @@
-#!/usr/bin/env python3
+#!/usr/bin/python2
 # -*- coding: utf-8 -*-
 
 # templates.py file is part of sbo-templates.
 
-# Copyright 2015-2017 Dimitris Zlatanidis <d.zlatanidis@gmail.com>
+# Copyright 2015-2018 Dimitris Zlatanidis <d.zlatanidis@gmail.com>
 # All rights reserved.
 
 # SBo tool for managing templates.

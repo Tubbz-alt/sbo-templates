@@ -1,3 +1,7 @@
+1.0.2 - 13/01/2018
+Updated:
+- Switch back to python2 due to compatibility with utf-8 codec.
+
 1.0.1 - 19/12/2017
 Updated:
 - Fix setup requirements and classifiers.
