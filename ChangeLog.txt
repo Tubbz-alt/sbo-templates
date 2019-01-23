@@ -1,3 +1,7 @@
+1.0.3 - 23/01/2019
+Updated:
+- Switch to gitlab repository
+
 1.0.2 - 13/01/2018
 Updated:
 - Switch back to python2 due to compatibility with utf-8 codec.
@@ -8,9 +12,9 @@ Updated:
 
 1.0.0 - 16/12/2017
 Updated:
- - Fix read slack-desc file if exist.
+- Fix read slack-desc file if exist.
 Feature:
- - Switch to python3.
+- Switch to python3.
 
 0.14.0 - 16/12/2017
 Feature:
