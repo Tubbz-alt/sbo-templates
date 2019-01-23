@@ -8,7 +8,7 @@
 
 # SBo tool for managing templates.
 
-# https://github.com/dslackw/sbo-templates
+# https://gitlab.com/dslackw/sbo-templates
 
 # sbo-templates is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -29,4 +29,4 @@ __version_info__ = (1, 0, 2)
 __version__ = "{0}.{1}.{2}".format(*__version_info__)
 __license__ = "GNU General Public License v3 (GPLv3)"
 __email__ = "d.zlatanidis@gmail.com"
-__website__ = "https://github.com/dslackw/sbo-templates"
+__website__ = "https://gitlab.com/dslackw/sbo-templates"

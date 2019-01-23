@@ -1,20 +1,3 @@
-.. image:: https://img.shields.io/github/release/dslackw/sbo-templates.svg
-    :target: https://github.com/dslackw/sbo-templates/releases
-.. image:: https://travis-ci.org/dslackw/sbo-templates.svg?branch=master
-    :target: https://travis-ci.org/dslackw/sbo-templates
-.. image:: https://landscape.io/github/dslackw/sbo-templates/master/landscape.png
-    :target: https://landscape.io/github/dslackw/sbo-templates/master
-.. image:: https://img.shields.io/codacy/d586be6aeca9468e85bd057262bffc8e.svg
-    :target: https://www.codacy.com/public/dzlatanidis/sbo-templates/dashboard
-.. image:: https://img.shields.io/badge/license-GPLv3-blue.svg
-    :target: https://github.com/dslackw/sbo-templates
-.. image:: https://img.shields.io/github/stars/dslackw/sbo-templates.svg
-    :target: https://github.com/dslackw/sbo-templates
-.. image:: https://img.shields.io/github/forks/dslackw/sbo-templates.svg
-    :target: https://github.com/dslackw/sbo-templates
-.. image:: https://img.shields.io/github/issues/dslackw/sbo-templates.svg
-    :target: https://github.com/dslackw/sbo-templates/issues
-
 .. contents:: Table of Contents:
 
 
@@ -86,24 +69,24 @@ Usage
 Screenshots
 -----------
 
-.. image:: https://raw.githubusercontent.com/dslackw/images/master/sbo-templates/sbo-templates-1.png
-    :target: https://github.com/dslackw/sbo-templates
+.. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/sbo-templates-1.png
+    :target: https://gitlab.com/dslackw/sbo-templates
 
 
-.. image:: https://raw.githubusercontent.com/dslackw/images/master/sbo-templates/sbo-templates-2.png
-    :target: https://github.com/dslackw/sbo-templates
+.. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/sbo-templates-2.png
+    :target: https://gitlab.com/dslackw/sbo-templates
 
 
-.. image:: https://raw.githubusercontent.com/dslackw/images/master/sbo-templates/sbo-templates-3.png
-    :target: https://github.com/dslackw/sbo-templates
+.. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/sbo-templates-3.png
+    :target: https://gitlab.com/dslackw/sbo-templates
 
 
-.. image:: https://raw.githubusercontent.com/dslackw/images/master/sbo-templates/sbo-templates-4.png
-    :target: https://github.com/dslackw/sbo-templates
+.. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/sbo-templates-4.png
+    :target: https://gitlab.com/dslackw/sbo-templates
 
  
-.. image:: https://raw.githubusercontent.com/dslackw/images/master/sbo-templates/sbo-templates-5.png
-    :target: https://github.com/dslackw/sbo-templates
+.. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/sbo-templates-1.png
+    :target: https://gitlab.com/dslackw/sbo-templates
 
 
 Copyright 
