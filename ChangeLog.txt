@@ -13,8 +13,6 @@ Updated:
 1.0.0 - 16/12/2017
 Updated:
 - Fix read slack-desc file if exist.
-Feature:
-- Switch to python3.
 
 0.14.0 - 16/12/2017
 Feature:
