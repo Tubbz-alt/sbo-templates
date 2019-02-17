@@ -97,7 +97,7 @@ class SBoTemplates(object):
         """optional arguments
         """
         args = [
-            "Usage: sbo-templates <application>\n",
+            "Usage: sbt <application>\n",
             "Optional arguments:",
             "  -h, --help           display this help and exit",
             "  -v, --version        print version and exit",

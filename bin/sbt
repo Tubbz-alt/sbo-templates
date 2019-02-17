@@ -1,7 +1,7 @@
 #!/usr/bin/python2
 # -*- coding: utf-8 -*-
 
-# sbo-templates file is part of sbo-templates.
+# sbt file is part of sbo-templates.
 
 # Copyright 2015-2019 Dimitris Zlatanidis <d.zlatanidis@gmail.com>
 # All rights reserved.
@@ -20,6 +20,7 @@
 # GNU General Public License for more details.
 # You should have received a copy of the GNU General Public License
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
+
 
 """
      _                 _                       _       _

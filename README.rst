@@ -59,7 +59,7 @@ Usage
 
 .. code-block:: bash
 
-    Usage: sbo-templates <application>
+    Usage: sbt <application>
 
     Optional arguments:
       -h, --help           display this help and exit

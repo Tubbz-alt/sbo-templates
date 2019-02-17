@@ -1,3 +1,7 @@
+1.0.5 - 17/02/2019
+Feature:
+- Changed the script to sbt
+
 1.0.4 - 17/02/2019
 Fixed:
 - Bufixed md5sum check write to .info file
