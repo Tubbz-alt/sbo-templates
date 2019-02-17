@@ -1,3 +1,7 @@
+1.0.4 - 17/02/2019
+Fixed:
+- Bufixed md5sum check write to .info file
+
 1.0.3 - 23/01/2019
 Updated:
 - Switch to gitlab repository
@@ -13,6 +17,8 @@ Updated:
 1.0.0 - 16/12/2017
 Updated:
 - Fix read slack-desc file if exist.
+Feature:
+- Switch to python3.
 
 0.14.0 - 16/12/2017
 Feature:

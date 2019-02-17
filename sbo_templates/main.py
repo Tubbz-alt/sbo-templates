@@ -424,8 +424,8 @@ class SBoTemplates(object):
              attributes),
             (text[6], 7, 1, self._type, 7, 6, field_length, input_length,
              attributes),
-            (text[7], 8, 1, self._categories, 8, 12, field_length, input_length,
-             attributes),
+            (text[7], 8, 1, self._categories, 8, 12, field_length,
+             input_length, attributes),
             (text[8], 9, 1, self._genericname, 9, 13, field_length,
              input_length, attributes),
         ]
@@ -599,12 +599,18 @@ class SBoTemplates(object):
         self.width = 90
         self.chk_md5 = "".join(self.chk_md5.replace('"', ''))
         if os.path.isfile(self.pwd + self.source):
-            with open(self.pwd + self.source) as f:
-                data = f.read()
-                if self.chk_md5 != hashlib.md5(data).hexdigest():
-                    self.msg = "MD5SUM check for {0} FAILED".format(self.source)
-                    self.messageBox()
-            self.infoFile()
+            if self.chk_md5 != self.sourceCheckSum():
+                self.msg = "MD5SUM check for {0} FAILED".format(
+                    self.source)
+                self.messageBox()
+                self.infoFile()
+
+    def sourceCheckSum(self):
+        """md5sum sources
+        """
+        with open(self.pwd + self.source) as f:
+            data = f.read()
+            return hashlib.md5(data).hexdigest()
 
     def touch(self):
         """create empty file
@@ -623,6 +629,7 @@ class SBoTemplates(object):
 def main():
 
     SBoTemplates().menu()
+
 
 if __name__ == "__main__":
     main()
