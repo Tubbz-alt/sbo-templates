@@ -26,6 +26,7 @@ Features
 - Select editor for working (dafault is 'nano').
 - Auto-import data from .info file 
   (such as maintainer name, appllication name, version etc.)
+- Autocorrect the quotation mark in the .info file
 - Warning for failed checksum.
 
 Install

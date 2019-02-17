@@ -354,6 +354,16 @@ class SBoTemplates(object):
              input_length, attributes)
         ]
         self.mixedform()
+        # autocorrect the quotation mark ""
+        i = 0
+        for f in self.fields:
+            if not f.startswith('"'):
+                self.fields[i] = '"' + f
+            if not f.endswith('"'):
+                self.fields[i] = self.fields[i] + '"'
+            if f == '' or f == '"':
+                self.fields[i] = '""'
+            i = i + 1
         if self.fields:
             self._version = self.fields[1]
             self._homepage = self.fields[2]

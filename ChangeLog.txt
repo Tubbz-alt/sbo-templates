@@ -1,3 +1,7 @@
+1.0.6 - 17/02/2019
+Feature:
+- Adde autocorrect the quotation mark in the .info file
+
 1.0.5 - 17/02/2019
 Feature:
 - Changed the script to sbt
