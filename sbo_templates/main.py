@@ -354,16 +354,7 @@ class SBoTemplates(object):
              input_length, attributes)
         ]
         self.mixedform()
-        # autocorrect the quotation mark ""
-        i = 0
-        for f in self.fields:
-            if not f.startswith('"'):
-                self.fields[i] = '"' + f
-            if not f.endswith('"'):
-                self.fields[i] = self.fields[i] + '"'
-            if f == '' or f == '"':
-                self.fields[i] = '""'
-            i = i + 1
+        self.__autocorrectQuotationMark()
         if self.fields:
             self._version = self.fields[1]
             self._homepage = self.fields[2]
@@ -384,6 +375,19 @@ class SBoTemplates(object):
         for item, line in zip(text, self.fields):
             self.data.append(item + line)
         self.choose()
+
+    def __autocorrectQuotationMark(self):
+        """autocorrect the quotation mark "" in the .info file
+        """
+        i = 0
+        for f in self.fields:
+            if not f.startswith('"'):
+                self.fields[i] = '"' + f
+            if not f.endswith('"'):
+                self.fields[i] = self.fields[i] + '"'
+            if f == '' or f == '"':
+                self.fields[i] = '""'
+            i = i + 1
 
     def __infoFileRead(self, text):
         """read data for <application>.info file if exist
