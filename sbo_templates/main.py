@@ -307,7 +307,8 @@ class SBoTemplates(object):
         """grab slack-desc text if exist
         """
         line_count = 0
-        if os.path.isfile(self.pwd + "slack-desc"):
+        if (os.path.isfile(self.pwd + self.filename) and
+                os.path.isfile(self.pwd + self.app + ".SlackBuild")):
             with open(self.pwd + self.filename, "r") as info:
                 for line in info:
                     line_count += 1

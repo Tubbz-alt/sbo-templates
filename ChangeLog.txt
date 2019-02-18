@@ -1,6 +1,8 @@
-1.0.6 - 17/02/2019
+1.0.6 - 18/02/2019
 Feature:
 - Adde autocorrect the quotation mark in the .info file
+Fixed:
+- Read slack-desc file
 
 1.0.5 - 17/02/2019
 Feature:
