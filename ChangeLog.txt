@@ -1,8 +1,10 @@
 1.0.6 - 18/02/2019
 Feature:
-- Adde autocorrect the quotation mark in the .info file
+- Added autocorrect the quotation mark in the .info file
 Fixed:
 - Read slack-desc file
+Updated:
+- Rename the script to sbotmp
 
 1.0.5 - 17/02/2019
 Feature:

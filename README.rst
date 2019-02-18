@@ -60,7 +60,7 @@ Usage
 
 .. code-block:: bash
 
-    Usage: sbt <application>
+    Usage: sbotmp <application>
 
     Optional arguments:
       -h, --help           display this help and exit

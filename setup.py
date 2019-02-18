@@ -37,7 +37,7 @@ from sbo_templates.__metadata__ import (
 setup(
     name=__prog__,
     packages=["sbo_templates"],
-    scripts=["bin/sbt"],
+    scripts=["bin/sbotmp"],
     version=__version__,
     description="SBo tool for managing templates.",
     keywords=["sbo", "templates", "slackbuild"],
