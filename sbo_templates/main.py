@@ -295,6 +295,14 @@ class SBoTemplates(object):
             self.email = self.fields[1]
             self.live = self.fields[2]
             self.editor = self.fields[3]
+            if not self.fields[0].startswith('"'):
+                self.fields[0] = '"' + self.fields[0]
+            if not self.fields[0].endswith('"'):
+                self.fields[0] = self.fields[0] + '"'
+            if not self.fields[1].startswith('"'):
+                self.fields[1] = '"' + self.fields[1]
+            if not self.fields[1].endswith('"'):
+                self.fields[1] = self.fields[1] + '"'
         for item, line in zip(text, self.fields):
             self.data.append(item + line)
         self.choose()
