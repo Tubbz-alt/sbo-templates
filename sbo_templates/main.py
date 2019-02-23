@@ -387,6 +387,10 @@ class SBoTemplates(object):
         text = ["PRGNAM=", "VERSION=", "HOMEPAGE=", "DOWNLOAD=", "MD5SUM=",
                 "DOWNLOAD_x86_64=", "MD5SUM_x86_64=", "REQUIRES=",
                 "MAINTAINER=", "EMAIL="]
+        if not self.update_md5sum_x86:
+            self._md5sum = '"'
+        if not self.update_md5sum_x86_64:
+            self.update_md5sum_x86_64 = '"'
         self.__infoFileRead(text)
         self.elements = [
             (text[0], 1, 1, '"{0}"'.format(self.app), 1, 8, field_length,
@@ -482,8 +486,8 @@ class SBoTemplates(object):
                                     "Not supported multi lines files.")
                         self.messageBox()
                         self.menu()
-                self.update_md5sum_x86 = False
-                self.update_md5sum_x86_64 = False
+        self.update_md5sum_x86 = False
+        self.update_md5sum_x86_64 = False
 
 
     def desktopFile(self):
