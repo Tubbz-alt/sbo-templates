@@ -215,6 +215,12 @@ class SBoTemplates(object):
             self.pwd = self.fields[0].strip()
             if self.pwd and not self.pwd.endswith("/"):
                 self.pwd = self.pwd + "/"
+                if not os.path.isdir(self.pwd):
+                    self.width = 60
+                    self.height = 6
+                    self.msg = "Directory {0} is not exist".format(self.pwd)
+                    self.messageBox()
+                    self.menu()
             self.width = 60
             self.height = 6
             self.msg = "Current directory: {0}".format(self.pwd)
@@ -227,6 +233,11 @@ class SBoTemplates(object):
         text1 = "Choose which checksum you want to update"
         text2 = "Select the type of the architecture"
         sources = self.listDir()
+        if not sources:
+            self.height = 5
+            self.msg = "No sources found"
+            self.messageBox()
+            self.menu()
         height = 20
         width = 80
         choices = []
