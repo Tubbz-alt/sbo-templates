@@ -28,6 +28,7 @@ Features
   (such as maintainer name, appllication name, version etc.)
 - Autocorrect the quotation mark in the .info file
 - Warning for failed checksum.
+- Auto-update the source checksum
 
 Install
 -------
