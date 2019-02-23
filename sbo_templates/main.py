@@ -207,7 +207,7 @@ class SBoTemplates(object):
         input_length = 90
         attributes = '0x0'
         self.elements = [
-            ("Directory=", 1, 1, "", 1, 11, field_length, input_length,
+            ("New path=", 1, 1, "", 1, 10, field_length, input_length,
              attributes),
         ]
         self.mixedform()
