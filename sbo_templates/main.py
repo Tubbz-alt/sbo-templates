@@ -56,7 +56,7 @@ class SBoTemplates(object):
         self.chk_md5 = ""
         self.update_md5sum_x86 = False
         self.update_md5sum_x86_64 = False
-        self.pwd = ""
+        self.pwd = os.getcwd()
         self.slack_desc_text = []
         self.slack_desc_data = []
         # appname.info
@@ -212,15 +212,16 @@ class SBoTemplates(object):
         ]
         self.mixedform()
         if self.fields:
+            if not os.path.isdir(self.fields[0].strip()):
+                self.width = 60
+                self.height = 6
+                self.msg = "Directory {0} is not exist".format(
+                    self.fields[0].strip())
+                self.messageBox()
+                self.menu()
             self.pwd = self.fields[0].strip()
             if self.pwd and not self.pwd.endswith("/"):
                 self.pwd = self.pwd + "/"
-                if not os.path.isdir(self.pwd):
-                    self.width = 60
-                    self.height = 6
-                    self.msg = "Directory {0} is not exist".format(self.pwd)
-                    self.messageBox()
-                    self.menu()
             self.width = 60
             self.height = 6
             self.msg = "Current directory: {0}".format(self.pwd)
