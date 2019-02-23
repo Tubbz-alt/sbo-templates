@@ -248,6 +248,8 @@ class SBoTemplates(object):
             ]
         code1, tag1 = self.d.radiolist(text1, height,
                                        width, list_height=0, choices=choices)
+        if code1 == "cancel":
+            self.menu()
         choices = [
                 ("MD5SUM", "For x86 sources", False),
                 ("MD5SUM_x86_64", "For x86_64 sources", False),
