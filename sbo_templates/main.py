@@ -56,7 +56,7 @@ class SBoTemplates(object):
         self.chk_md5 = ""
         self.update_md5sum_x86 = False
         self.update_md5sum_x86_64 = False
-        self.pwd = os.getcwd()
+        self.pwd = os.getcwd() + "/"
         self.slack_desc_text = []
         self.slack_desc_data = []
         # appname.info
