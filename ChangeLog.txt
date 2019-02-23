@@ -7,6 +7,7 @@ Fixed:
 - Read .info file with multi lines
 - Maintainer data in exist .info file
 - Slack-desc read-write 11 lines
+- Check if directory exist
 Updated:
 - Rename the script to sbotmp
 

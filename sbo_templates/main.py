@@ -587,6 +587,8 @@ class SBoTemplates(object):
             ]
             code, tag = self.d.radiolist("{0}".format(self.filename), height,
                                          width, list_height=0, choices=choices)
+            if code == "cancel":
+                self.menu()
             self.msg = "{0} script created.".format(self.filename)
             self.height = 7
             self.width = len(self.msg) + 4
