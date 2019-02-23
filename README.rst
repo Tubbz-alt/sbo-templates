@@ -67,6 +67,9 @@ Usage
       -v, --version        print version and exit
 
 
+For a new project, you create at first a new folder with the same name with the project,
+for an existing project, come into the folder and start to edit. Enjoy!
+
 Screenshots
 -----------
 

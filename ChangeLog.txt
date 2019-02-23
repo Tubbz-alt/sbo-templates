@@ -1,8 +1,12 @@
-1.0.6 - 18/02/2019
+1.0.6 - 23/02/2019
 Feature:
 - Added autocorrect the quotation mark in the .info file
+- MD5SUM to checksum and update the .info file
 Fixed:
 - Read slack-desc file
+- Read .info file with multi lines
+- Maintainer data in exist .info file
+- Slack-desc read-write 11 lines
 Updated:
 - Rename the script to sbotmp
 

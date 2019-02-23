@@ -54,6 +54,8 @@ class SBoTemplates(object):
         self.__cli()
         self.source = ""
         self.chk_md5 = ""
+        self.update_md5sum_x86 = False
+        self.update_md5sum_x86_64 = False
         self.pwd = ""
         self.slack_desc_text = []
         self.slack_desc_data = []
@@ -97,7 +99,7 @@ class SBoTemplates(object):
         """optional arguments
         """
         args = [
-            "Usage: sbt <application>\n",
+            "Usage: sbotmp <application>\n",
             "Optional arguments:",
             "  -h, --help           display this help and exit",
             "  -v, --version        print version and exit",
@@ -117,8 +119,8 @@ class SBoTemplates(object):
         self.app = self.args[0]
         self.handy_ruler = 1
         self.__slackDescComments()
-        self.maintainer = ""
-        self.email = ""
+        self.maintainer = '""'
+        self.email = '""'
         self.live = ""
         self.editor = "nano"
         self.HOME = os.getenv("HOME") + "/"
@@ -131,6 +133,7 @@ class SBoTemplates(object):
             ("Doinst.sh", "Create doinst.sh script"),
             ("Slack desc", "Create slack-desc file"),
             ("SlackBuild", "Create {0}.SlackBuild script".format(self.app)),
+            ("MD5SUM", "Checksum the source"),
             ("Maintainer", "Maintainer data"),
             ("Directory", "Change directory"),
             ("Help", "Where to get help"),
@@ -173,6 +176,7 @@ class SBoTemplates(object):
             "Doinst.sh": self.doinst_sh,
             "SlackBuild": self.SlackBuild,
             "README": self.README,
+            "MD5SUM": self.MD5SUM,
             "Maintainer": self.maintainerData,
             "Directory": self.__updateDirectory,
             "Help": self.getHelp,
@@ -215,6 +219,36 @@ class SBoTemplates(object):
             self.height = 6
             self.msg = "Current directory: {0}".format(self.pwd)
             self.messageBox()
+        self.menu()
+
+    def MD5SUM(self):
+        """update the source checksum
+        """
+        text1 = "Choose which checksum you want to update"
+        text2 = "Select the type of the architecture"
+        sources = self.listDir()
+        height = 20
+        width = 80
+        choices = []
+        for k, v in sources.iteritems():
+            choices += [
+                (v, k, False)
+            ]
+        code1, tag1 = self.d.radiolist(text1, height,
+                                       width, list_height=0, choices=choices)
+        choices = [
+                ("MD5SUM", "For x86 sources", False),
+                ("MD5SUM_x86_64", "For x86_64 sources", False),
+            ]
+        code1, tag2 = self.d.radiolist(text2, height,
+                                       width, list_height=0, choices=choices)
+        if tag2 == "MD5SUM":
+            self._md5sum = '"{0}"'.format(tag1)
+            self.update_md5sum_x86 = True
+        elif tag2 == "MD5SUM_x86_64":
+            self._md5sum_x86_64 = '"{0}"'.format(tag1)
+            self.update_md5sum_x86_64 = True
+        self.infoFile()
         self.menu()
 
     def maintainerData(self):
@@ -287,7 +321,7 @@ class SBoTemplates(object):
                 ("{0}:".format(self.app), 1, 1, ' {0} ()'.format(self.app), 1,
                  len(self.app) + 2, field_length, input_length, attributes)
             ]
-        for i, line in zip(range(2, 12), self.slack_desc_data):
+        for i, line in zip(range(2, 13), self.slack_desc_data):
             self.elements += [("{0}:".format(self.app), i, 1, line, i,
                                len(self.app) + 2, field_length, input_length,
                                attributes)]
@@ -308,7 +342,7 @@ class SBoTemplates(object):
         """
         line_count = 0
         if (os.path.isfile(self.pwd + self.filename) and
-                os.path.isfile(self.pwd + self.app + ".SlackBuild")):
+                os.path.isfile(self.pwd + "{0}.SlackBuild".format(self.app))):
             with open(self.pwd + self.filename, "r") as info:
                 for line in info:
                     line_count += 1
@@ -316,7 +350,7 @@ class SBoTemplates(object):
                         self.slack_desc_data.append(
                             line[len(self.app) + 1:].rstrip())
         else:
-            self.slack_desc_data = [""] * 11
+            self.slack_desc_data = [""] * 10
 
     def infoFile(self):
         """<application>.info file handler
@@ -349,9 +383,9 @@ class SBoTemplates(object):
              input_length * 4, attributes),
             (text[7], 8, 1, self._requires, 8, 10, field_length * 4,
              input_length * 4, attributes),
-            (text[8], 9, 1, '"{0}"'.format(self.maintainer), 9, 12,
+            (text[8], 9, 1, self.maintainer, 9, 12,
              field_length, input_length, attributes),
-            (text[9], 10, 1, '"{0}"'.format(self.email), 10, 7, field_length,
+            (text[9], 10, 1, self.email, 10, 7, field_length,
              input_length, attributes)
         ]
         self.mixedform()
@@ -361,6 +395,8 @@ class SBoTemplates(object):
             self._homepage = self.fields[2]
             self._download = self.fields[3]
             self._md5sum = self.fields[4]
+            self.maintainer = self.fields[8]
+            self.email = self.fields[9]
             if self._download:
                 self.source = self._download.replace('"', '').split("/")[-1]
                 self.chk_md5 = self._md5sum
@@ -396,21 +432,37 @@ class SBoTemplates(object):
         if os.path.isfile(self.pwd + self.filename):
             with open(self.pwd + self.filename, "r") as info:
                 for line in info:
-                    fd = line.split("=")[1].strip()
-                    if line.startswith(text[1]):
-                        self._version = fd
-                    if line.startswith(text[2]):
-                        self._homepage = fd
-                    if line.startswith(text[3]):
-                        self._download = fd
-                    if line.startswith(text[4]):
-                        self._md5sum = fd
-                    if line.startswith(text[5]):
-                        self._download_x86_64 = fd
-                    if line.startswith(text[6]):
-                        self._md5sum_x86_64 = fd
-                    if line.startswith(text[7]):
-                        self._requires = fd
+                    try:
+                        fd = line.split("=")[1].strip()
+                        if line.startswith(text[1]):
+                            self._version = fd
+                        if line.startswith(text[2]):
+                            self._homepage = fd
+                        if line.startswith(text[3]):
+                            self._download = fd
+                        if (line.startswith(text[4]) and
+                                not self.update_md5sum_x86):
+                            self._md5sum = fd
+                        if line.startswith(text[5]):
+                            self._download_x86_64 = fd
+                        if (line.startswith(text[6]) and
+                                not self.update_md5sum_x86_64):
+                            self._md5sum_x86_64 = fd
+                        if line.startswith(text[7]):
+                            self._requires = fd
+                        if line.startswith(text[8]):
+                            self.maintainer = fd
+                        if line.startswith(text[9]):
+                            self.email = fd
+                    except IndexError:
+                        self.height = 7
+                        self.msg = ("Try to read the .info file failed. "
+                                    "Not supported multi lines files.")
+                        self.messageBox()
+                        self.menu()
+                self.update_md5sum_x86 = False
+                self.update_md5sum_x86_64 = False
+
 
     def desktopFile(self):
         """<application>.desktop file handler
@@ -507,7 +559,7 @@ class SBoTemplates(object):
         """SlackBuild handler file
         """
         self.filename = "{0}.info".format(self.app)
-        text = ["x", "VERSION="] + (["x"] * 6)
+        text = ["x", "VERSION="] + (["x"] * 8)
         self.__infoFileRead(text)   # get version for .info file
         self.filename = "{0}.SlackBuild".format(self.app)
         if not os.path.isfile(self.pwd + self.filename):
@@ -607,6 +659,19 @@ class SBoTemplates(object):
         else:
             self.msg = "File {0} is created.".format(self.filename)
 
+    def listDir(self):
+        sources = {}
+        suffixes = [".tar", ".gz", ".bz", ".bz2", ".xz", ".zip"]
+        list_all_files = os.listdir(os.getcwd())
+        for f in list_all_files:
+            for s in suffixes:
+                if f.endswith(s):
+                    sources.update({f: self.sourceCheckSum(f)})
+        return sources
+
+        # print list(set(sbo_files).difference(list_all_files))
+        sys.exit()
+
     def checksum(self):
         """checksum sources
         """
@@ -614,16 +679,17 @@ class SBoTemplates(object):
         self.width = 90
         self.chk_md5 = "".join(self.chk_md5.replace('"', ''))
         if os.path.isfile(self.pwd + self.source):
-            if self.chk_md5 != self.sourceCheckSum():
+
+            if self.chk_md5 != self.sourceCheckSum(self.source):
                 self.msg = "MD5SUM check for {0} FAILED".format(
                     self.source)
                 self.messageBox()
                 self.infoFile()
 
-    def sourceCheckSum(self):
+    def sourceCheckSum(self, source):
         """md5sum sources
         """
-        with open(self.pwd + self.source) as f:
+        with open(self.pwd + source) as f:
             data = f.read()
             return hashlib.md5(data).hexdigest()
 
