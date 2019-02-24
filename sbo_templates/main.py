@@ -485,14 +485,13 @@ class SBoTemplates(object):
             self.maintainer = self.fields[8]
             self.email = self.fields[9]
             if self._download:
-                self.source = self._download.replace('"', '').split("/")[-1]
+                self.source = self._download[1:-1].split("/")[-1]
                 self.chk_md5 = self._md5sum
                 self.checksum()
             self._download_x86_64 = self.fields[5]
             self._md5sum_x86_64 = self.fields[6]
             if self._download_x86_64:
-                self.source = self._download_x86_64.replace(
-                    '"', '').split("/")[-1]
+                self.source = self._download_x86_64[1:-1].split("/")[-1]
                 self.chk_md5 = self._md5sum_x86_64
                 self.checksum()
             self._requires = self.fields[7]
