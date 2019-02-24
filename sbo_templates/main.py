@@ -130,14 +130,16 @@ class SBoTemplates(object):
         self.filename = "{0}.sbo-maintainer".format(self.HOME)
         self.__maintainerInit()
         self.choises = [
-            ("Info", "Create {0}.info file".format(self.app)),
-            ("README", "Create README file"),
-            ("Desktop", "Create {0}.desktop file".format(self.app)),
-            ("Doinst.sh", "Create doinst.sh script"),
-            ("Slack desc", "Create slack-desc file"),
-            ("SlackBuild", "Create {0}.SlackBuild script".format(self.app)),
+            ("Info", "Edit {0}.info file".format(self.app)),
+            ("README", "Edit README file"),
+            ("Desktop", "Edit {0}.desktop file".format(self.app)),
+            ("Doinst.sh", "Edit doinst.sh script"),
+            ("Slack desc", "Edit slack-desc file"),
+            ("SlackBuild", "Edit {0}.SlackBuild script".format(
+                self.app)),
+            ("Chmod", "Permissions -+ {0}.SlackBuild script".format(self.app)),
             ("Download", "Download the sources"),
-            ("MD5SUM", "Checksum the source"),
+            ("MD5SUM", "Checksum the sources"),
             ("Maintainer", "Maintainer data"),
             ("Directory", "Change directory"),
             ("Help", "Where to get help"),
@@ -167,7 +169,7 @@ class SBoTemplates(object):
         """
         self.__templatesInit()  # reset all data
         code, tag = self.d.menu("Choose an option or press ESC or <Cancel> to "
-                                "Exit.", height=15, width=70,
+                                "Exit.", height=20, width=70,
                                 menu_height=len(self.choises),
                                 choices=self.choises)
         if code == self.d.CANCEL or code == self.d.ESC or tag[0] == "0":
@@ -180,6 +182,7 @@ class SBoTemplates(object):
             "Doinst.sh": self.doinst_sh,
             "SlackBuild": self.SlackBuild,
             "README": self.README,
+            "Chmod": self.chmod,
             "Download": self.download,
             "MD5SUM": self.MD5SUM,
             "Maintainer": self.maintainerData,
@@ -232,6 +235,11 @@ class SBoTemplates(object):
             self.msg = "Current directory: {0}".format(self.pwd)
             self.messageBox()
         self.menu()
+
+    def chmod(self):
+        """change the permissions on the .SlackBuild script
+        """
+        pass
 
     def download(self):
         """Download the sources

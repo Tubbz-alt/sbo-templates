@@ -1,6 +1,8 @@
 1.0.9 - 24/02/2019
 Added:
 - Features added to download the sources
+Updated:
+- The menu and fixed the length
 
 1.0.8 - 24/02/2019
 Fixed:
