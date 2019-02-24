@@ -667,39 +667,40 @@ class SBoTemplates(object):
             self.msg = "{0} script created.".format(self.filename)
             self.height = 7
             self.width = len(self.msg) + 4
+            maintainer = self.maintainer[1:-1]
             if tag == "autotools-template":
                 self.data = SlackBuilds(
-                    self.app, version, self.year, self.maintainer,
+                    self.app, version, self.year, maintainer,
                     self.live).autotools().splitlines()
                 self.write()
                 self.messageBox()
             elif tag == "cmake-template":
                 self.data = SlackBuilds(
-                    self.app, version, self.year, self.maintainer,
+                    self.app, version, self.year, maintainer,
                     self.live).cmake().splitlines()
                 self.write()
                 self.messageBox()
             elif tag == "perl-template":
                 self.data = SlackBuilds(
-                    self.app, version, self.year, self.maintainer,
+                    self.app, version, self.year, maintainer,
                     self.live).perl().splitlines()
                 self.write()
                 self.messageBox()
             elif tag == "python-template":
                 self.data = SlackBuilds(
-                    self.app, version, self.year, self.maintainer,
+                    self.app, version, self.year, maintainer,
                     self.live).python().splitlines()
                 self.write()
                 self.messageBox()
             elif tag == "rubygem-template":
                 self.data = SlackBuilds(
-                    self.app, version, self.year, self.maintainer,
+                    self.app, version, self.year, maintainer,
                     self.live).rubygem().splitlines()
                 self.write()
                 self.messageBox()
             elif tag == "haskell-template":
                 self.data = SlackBuilds(
-                    self.app, version, self.year, self.maintainer,
+                    self.app, version, self.year, maintainer,
                     self.live).haskell().splitlines()
                 self.write()
                 self.messageBox()
