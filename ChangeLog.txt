@@ -1,3 +1,7 @@
+1.0.9 - 24/02/2019
+Added:
+- Features added to download the sources
+
 1.0.8 - 24/02/2019
 Fixed:
 - Read and write slack-desc file

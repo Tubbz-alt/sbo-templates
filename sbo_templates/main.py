@@ -60,6 +60,9 @@ class SBoTemplates(object):
         self.slack_desc_text = []
         self.slack_desc_data = []
         # appname.info
+        self.info_text = ["PRGNAM=", "VERSION=", "HOMEPAGE=", "DOWNLOAD=",
+                          "MD5SUM=", "DOWNLOAD_x86_64=", "MD5SUM_x86_64=",
+                          "REQUIRES=", "MAINTAINER=", "EMAIL="]
         self._version = '""'
         self._homepage = '""'
         self._download = '""'
@@ -133,6 +136,7 @@ class SBoTemplates(object):
             ("Doinst.sh", "Create doinst.sh script"),
             ("Slack desc", "Create slack-desc file"),
             ("SlackBuild", "Create {0}.SlackBuild script".format(self.app)),
+            ("Download", "Download the sources"),
             ("MD5SUM", "Checksum the source"),
             ("Maintainer", "Maintainer data"),
             ("Directory", "Change directory"),
@@ -176,6 +180,7 @@ class SBoTemplates(object):
             "Doinst.sh": self.doinst_sh,
             "SlackBuild": self.SlackBuild,
             "README": self.README,
+            "Download": self.download,
             "MD5SUM": self.MD5SUM,
             "Maintainer": self.maintainerData,
             "Directory": self.__updateDirectory,
@@ -226,6 +231,21 @@ class SBoTemplates(object):
             self.height = 6
             self.msg = "Current directory: {0}".format(self.pwd)
             self.messageBox()
+        self.menu()
+
+    def download(self):
+        """Download the sources
+        """
+        self.filename = "{0}.info".format(self.app)
+        self.__infoFileRead()
+        download_x86 = self._download[1:-1]
+        download_x86_64 = self._download_x86_64[1:-1]
+        if download_x86:
+            subprocess.call("wget {0}".format(download_x86), shell=True)
+        if download_x86_64:
+            subprocess.call("wget {0}".format(download_x86_64),
+                            shell=True)
+        raw_input("Press Enter to continue ...")
         self.menu()
 
     def MD5SUM(self):
@@ -384,34 +404,31 @@ class SBoTemplates(object):
         field_length = 90
         input_length = 90
         attributes = '0x0'
-        text = ["PRGNAM=", "VERSION=", "HOMEPAGE=", "DOWNLOAD=", "MD5SUM=",
-                "DOWNLOAD_x86_64=", "MD5SUM_x86_64=", "REQUIRES=",
-                "MAINTAINER=", "EMAIL="]
         if not self.update_md5sum_x86:
             self._md5sum = '"'
         if not self.update_md5sum_x86_64:
             self.update_md5sum_x86_64 = '"'
-        self.__infoFileRead(text)
+        self.__infoFileRead()
         self.elements = [
-            (text[0], 1, 1, '"{0}"'.format(self.app), 1, 8, field_length,
-             input_length, attributes),
-            (text[1], 2, 1, self._version, 2, 9, field_length, input_length,
-             attributes),
-            (text[2], 3, 1, self._homepage, 3, 10, field_length * 4,
-             input_length * 4, attributes),
-            (text[3], 4, 1, self._download, 4, 10, field_length * 4,
-             input_length * 4, attributes),
-            (text[4], 5, 1, self._md5sum, 5, 8, field_length + 8,
-             input_length + 8, attributes),
-            (text[5], 6, 1, self._download_x86_64, 6, 17, field_length * 4,
-             input_length * 4, attributes),
-            (text[6], 7, 1, self._md5sum_x86_64, 7, 15, field_length * 4,
-             input_length * 4, attributes),
-            (text[7], 8, 1, self._requires, 8, 10, field_length * 4,
-             input_length * 4, attributes),
-            (text[8], 9, 1, self.maintainer, 9, 12,
+            (self.info_text[0], 1, 1, '"{0}"'.format(self.app), 1, 8,
              field_length, input_length, attributes),
-            (text[9], 10, 1, self.email, 10, 7, field_length,
+            (self.info_text[1], 2, 1, self._version, 2, 9, field_length,
+             input_length, attributes),
+            (self.info_text[2], 3, 1, self._homepage, 3, 10, field_length * 4,
+             input_length * 4, attributes),
+            (self.info_text[3], 4, 1, self._download, 4, 10, field_length * 4,
+             input_length * 4, attributes),
+            (self.info_text[4], 5, 1, self._md5sum, 5, 8, field_length + 8,
+             input_length + 8, attributes),
+            (self.info_text[5], 6, 1, self._download_x86_64, 6, 17,
+             field_length * 4, input_length * 4, attributes),
+            (self.info_text[6], 7, 1, self._md5sum_x86_64, 7, 15,
+             field_length * 4, input_length * 4, attributes),
+            (self.info_text[7], 8, 1, self._requires, 8, 10, field_length * 4,
+             input_length * 4, attributes),
+            (self.info_text[8], 9, 1, self.maintainer, 9, 12,
+             field_length, input_length, attributes),
+            (self.info_text[9], 10, 1, self.email, 10, 7, field_length,
              input_length, attributes)
         ]
         self.mixedform()
@@ -435,7 +452,7 @@ class SBoTemplates(object):
                 self.chk_md5 = self._md5sum_x86_64
                 self.checksum()
             self._requires = self.fields[7]
-        for item, line in zip(text, self.fields):
+        for item, line in zip(self.info_text, self.fields):
             self.data.append(item + line)
         self.choose()
 
@@ -452,7 +469,7 @@ class SBoTemplates(object):
                 self.fields[i] = '""'
             i = i + 1
 
-    def __infoFileRead(self, text):
+    def __infoFileRead(self):
         """read data for <application>.info file if exist
         """
         if os.path.isfile(self.pwd + self.filename):
@@ -460,25 +477,25 @@ class SBoTemplates(object):
                 for line in info:
                     try:
                         fd = line.split("=")[1].strip()
-                        if line.startswith(text[1]):
+                        if line.startswith(self.info_text[1]):
                             self._version = fd
-                        if line.startswith(text[2]):
+                        if line.startswith(self.info_text[2]):
                             self._homepage = fd
-                        if line.startswith(text[3]):
+                        if line.startswith(self.info_text[3]):
                             self._download = fd
-                        if (line.startswith(text[4]) and
+                        if (line.startswith(self.info_text[4]) and
                                 not self.update_md5sum_x86):
                             self._md5sum = fd
-                        if line.startswith(text[5]):
+                        if line.startswith(self.info_text[5]):
                             self._download_x86_64 = fd
-                        if (line.startswith(text[6]) and
+                        if (line.startswith(self.info_text[6]) and
                                 not self.update_md5sum_x86_64):
                             self._md5sum_x86_64 = fd
-                        if line.startswith(text[7]):
+                        if line.startswith(self.info_text[7]):
                             self._requires = fd
-                        if line.startswith(text[8]):
+                        if line.startswith(self.info_text[8]):
                             self.maintainer = fd
-                        if line.startswith(text[9]):
+                        if line.startswith(self.info_text[9]):
                             self.email = fd
                     except IndexError:
                         self.height = 7
@@ -488,7 +505,6 @@ class SBoTemplates(object):
                         self.menu()
         self.update_md5sum_x86 = False
         self.update_md5sum_x86_64 = False
-
 
     def desktopFile(self):
         """<application>.desktop file handler
