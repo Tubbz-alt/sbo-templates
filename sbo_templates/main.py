@@ -240,6 +240,11 @@ class SBoTemplates(object):
         self.__infoFileRead()
         download_x86 = self._download[1:-1]
         download_x86_64 = self._download_x86_64[1:-1]
+        if not download_x86 and not download_x86_64:
+            self.height = 10
+            self.msg = "There are no DOWNLOAD's in the .info file"
+            self.messageBox()
+            self.menu()
         if download_x86:
             subprocess.call("wget {0}".format(download_x86), shell=True)
         if download_x86_64:
