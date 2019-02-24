@@ -337,6 +337,7 @@ class SBoTemplates(object):
         input_length = 70
         attributes = '0x0'
         self.elements = []
+        self.slack_desc_data = []
         self.__slackDeskRead()
         if not self.slack_desc_data[0]:     # check description
             self.elements = [
@@ -363,8 +364,7 @@ class SBoTemplates(object):
         """grab slack-desc text if exist
         """
         line_count = 0
-        if (os.path.isfile(self.pwd + self.filename) and
-                os.path.isfile(self.pwd + "{0}.SlackBuild".format(self.app))):
+        if os.path.isfile(self.pwd + self.filename):
             with open(self.pwd + self.filename, "r") as info:
                 for line in info:
                     line_count += 1
