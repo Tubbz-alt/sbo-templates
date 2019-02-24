@@ -14,8 +14,7 @@
 About
 -----
 
-sbo-templates create easy, fast and safe templates files where can use with 
-SlackBuilds scripts.
+sbo-templates creates easy, fast and safe SlackBuilds scripts
 
 Features
 --------
@@ -23,7 +22,7 @@ Features
 - Create fast and safe templates.
 - Reading existing files templates for editing.
 - Repairs wrong templates.
-- Select editor for working (dafault is 'nano').
+- Select editor for working (dafault is 'vim').
 - Auto-import data from .info file 
   (such as maintainer name, appllication name, version etc.)
 - Autocorrect the quotation mark in the .info file

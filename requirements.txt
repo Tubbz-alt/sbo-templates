@@ -1,2 +1,2 @@
-# nano
+# vim
 python2-pythondialog>=3.4.0

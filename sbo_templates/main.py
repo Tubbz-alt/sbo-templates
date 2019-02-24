@@ -122,7 +122,7 @@ class SBoTemplates(object):
         self.maintainer = '""'
         self.email = '""'
         self.live = ""
-        self.editor = "nano"
+        self.editor = "vim"
         self.HOME = os.getenv("HOME") + "/"
         self.filename = "{0}.sbo-maintainer".format(self.HOME)
         self.__maintainerInit()
@@ -273,7 +273,7 @@ class SBoTemplates(object):
         self.height = 15
         self.filename = "{0}.sbo-maintainer".format(self.HOME)
         self.comments = ("Enter the details of the maintainer and change "
-                         "editor, \ndefault is 'nano'.")
+                         "editor, \ndefault is 'vim'.")
         self.width = 90
         field_length = 90
         input_length = 90

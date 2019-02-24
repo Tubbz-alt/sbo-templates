@@ -1,3 +1,7 @@
+1.0.8 - 24/02/2019
+Fixed:
+- Read and write slack-desc file
+
 1.0.7 - 23/02/2019
 Feature:
 - Added MD5SUM to checksum and update the .info file

@@ -8,8 +8,8 @@
              |-----handy-ruler------------------------------------------------------|
 sbo-templates: sbo-templates (SBo templates managing)
 sbo-templates:
-sbo-templates: sbo-templates create easy, fast and safe templates files where can
-sbo-templates: use with SlackBuilds scripts.
+sbo-templates: sbo-templates creates easy, fast and safe SlackBuilds scripts
+sbo-templates:
 sbo-templates:
 sbo-templates: Homepage: https://gitlab.com/dslackw/sbo-templates
 sbo-templates:
