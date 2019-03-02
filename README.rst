@@ -89,7 +89,7 @@ Screenshots
     :target: https://gitlab.com/dslackw/sbo-templates
 
  
-.. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/sbo-templates-1.png
+.. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/sbo-templates-5.png
     :target: https://gitlab.com/dslackw/sbo-templates
 
 
