@@ -864,15 +864,15 @@ find -L . \\
 
 mkdir build
 cd build
-  CFLAGS="$SLKCFLAGS" \
-  CXXFLAGS="$SLKCFLAGS" \
-  meson .. \
-    --buildtype=release \
-    --infodir=/usr/info \
-    --libdir=/usr/lib${LIBDIRSUFFIX} \
-    --localstatedir=/var \
-    --mandir=/usr/man \
-    --prefix=/usr \
+  CFLAGS="$SLKCFLAGS" \\
+  CXXFLAGS="$SLKCFLAGS" \\
+  meson .. \\
+    --buildtype=release \\
+    --infodir=/usr/info \\
+    --libdir=/usr/lib${LIBDIRSUFFIX} \\
+    --localstatedir=/var \\
+    --mandir=/usr/man \\
+    --prefix=/usr \\
     --sysconfdir=/etc
   ninja
   DESTDIR=$PKG ninja install

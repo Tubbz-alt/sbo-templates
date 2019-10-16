@@ -706,7 +706,7 @@ class SBoTemplates(object):
             elif tag == "meson-template":
                 self.data = SlackBuilds(
                     self.app, version, self.year, maintainer,
-                    self.live).haskell().splitlines()
+                    self.live).meson().splitlines()
                 self.write()
                 self.messageBox()
         self.edit()
