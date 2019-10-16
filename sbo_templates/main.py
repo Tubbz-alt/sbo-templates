@@ -656,7 +656,8 @@ class SBoTemplates(object):
                 ("perl-template", "perl-template.SlackBuild", False),
                 ("python-template", "python-template.SlackBuild", False),
                 ("rubygem-template", "rubygem-template.SlackBuild", False),
-                ("haskell-template", "rubygem-template.SlackBuild", False)
+                ("haskell-template", "haskell-template.SlackBuild", False),
+                ("meson-template", "meson-template.SlackBuild", False)
             ]
             code, tag = self.d.radiolist("{0}".format(self.filename), height,
                                          width, list_height=0, choices=choices)
@@ -697,6 +698,12 @@ class SBoTemplates(object):
                 self.write()
                 self.messageBox()
             elif tag == "haskell-template":
+                self.data = SlackBuilds(
+                    self.app, version, self.year, maintainer,
+                    self.live).haskell().splitlines()
+                self.write()
+                self.messageBox()
+            elif tag == "meson-template":
                 self.data = SlackBuilds(
                     self.app, version, self.year, maintainer,
                     self.live).haskell().splitlines()
