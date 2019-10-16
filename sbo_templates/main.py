@@ -37,7 +37,6 @@ from templates import (
 )
 from __metadata__ import __version__
 
-
 locale.setlocale(locale.LC_ALL, '')
 
 
