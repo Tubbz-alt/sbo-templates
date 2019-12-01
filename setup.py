@@ -1,4 +1,4 @@
-#!usr/bin/python2
+#!usr/bin/python3
 # -*- coding: utf-8 -*-
 
 # setup.py file is part of sbo-templates.
@@ -40,6 +40,7 @@ setup(
     scripts=["bin/sbotmp"],
     version=__version__,
     description="SBo tool for managing templates.",
+    long_description=open("README.rst").read(),
     keywords=["sbo", "templates", "slackbuild"],
     author=__author__,
     author_email=__email__,
@@ -51,8 +52,7 @@ setup(
         "License :: OSI Approved :: GNU General Public License v3 or later "
         "(GPLv3+)",
         "Operating System :: Unix",
-        "Programming Language :: Python",
-        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3",
         ],
-    long_description=open("README.rst").read()
+    python_requires=">=3.7"
 )

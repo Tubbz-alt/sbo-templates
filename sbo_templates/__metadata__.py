@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 # __metadata__.py file is part of sbo-templates.
@@ -25,7 +25,7 @@
 __prog__ = "sbo-templates"
 __author__ = "dslackw"
 __copyright__ = 2015-2019
-__version_info__ = (1, 1, 0)
+__version_info__ = (1, 3, 0)
 __version__ = "{0}.{1}.{2}".format(*__version_info__)
 __license__ = "GNU General Public License v3 (GPLv3)"
 __email__ = "d.zlatanidis@gmail.com"

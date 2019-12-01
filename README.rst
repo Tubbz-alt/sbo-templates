@@ -50,9 +50,9 @@ Install
 Requirements
 ------------
 
-- Requires Python 2.7+. It has been tested with Python 2.7.14
+- Requires Python 3.7+
 
-- python2-pythondialog >= 3.4.0
+- python3-pythondialog >= 3.4.0
 
 
 Usage

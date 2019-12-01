@@ -1,4 +1,4 @@
-#!/usr/bin/python2
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 # main.py file is part of sbo-templates.
@@ -31,11 +31,11 @@ import hashlib
 import subprocess
 from datetime import date
 from dialog import Dialog
-from templates import (
+from sbo_templates.templates import (
     SlackBuilds,
     doinst
 )
-from __metadata__ import __version__
+from sbo_templates.__metadata__ import __version__
 
 locale.setlocale(locale.LC_ALL, '')
 
@@ -300,7 +300,7 @@ class SBoTemplates(object):
         height = 20
         width = 80
         choices = []
-        for k, v in sources.iteritems():
+        for k, v in sources.items():
             choices += [
                 (v, k, False)
             ]
@@ -783,7 +783,7 @@ class SBoTemplates(object):
     def sourceCheckSum(self, source):
         """md5sum sources
         """
-        with open(self.pwd + source) as f:
+        with open(self.pwd + source, "rb") as f:
             data = f.read()
             return hashlib.md5(data).hexdigest()
 
