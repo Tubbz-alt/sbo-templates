@@ -52,7 +52,7 @@ Requirements
 
 - Requires Python 3.7+
 
-- python3-pythondialog >= 3.4.0
+- python3-pythondialog >= 3.5.0
 
 
 Usage

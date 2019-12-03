@@ -46,12 +46,13 @@ setup(
     author_email=__email__,
     url=__website__,
     package_data={"": ["LICENSE", "README.rst", "CHANGELOG"]},
-    install_requires=['python2-pythondialog>=3.4.0'],
+    install_requires=['python2-pythondialog>=3.5.0'],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: GNU General Public License v3 or later "
         "(GPLv3+)",
         "Operating System :: Unix",
+        "Programming Language :: Python",
         "Programming Language :: Python :: 3",
         ],
     python_requires=">=3.7"
