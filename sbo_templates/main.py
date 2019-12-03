@@ -445,9 +445,9 @@ class SBoTemplates(object):
         input_length = 90
         attributes = '0x0'
         if not self.update_md5sum_x86:
-            self._md5sum = '"'
+            self._md5sum = '""'
         if not self.update_md5sum_x86_64:
-            self.update_md5sum_x86_64 = '"'
+            self.update_md5sum_x86_64 = '""'
         text = ["PRGNAM=", "VERSION=", "HOMEPAGE=", "DOWNLOAD=",
                 "MD5SUM=", "DOWNLOAD_x86_64=", "MD5SUM_x86_64=",
                 "REQUIRES=", "MAINTAINER=", "EMAIL="]
