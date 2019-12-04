@@ -803,7 +803,8 @@ class SBoTemplates(object):
 
 def main():
 
-    SBoTemplates().menu()
+    app = SBoTemplates()
+    app.menu()
 
 
 if __name__ == "__main__":
