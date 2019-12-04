@@ -33,8 +33,8 @@ Features
 Asciicast
 ----------
 
-.. image:: https://asciinema.org/a/ldP2nLdyDnvmw1JD75WvkkBgA
-    :width: 150
+.. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/asciicast_img.png
+    :width: 250
     :target: https://asciinema.org/a/ldP2nLdyDnvmw1JD75WvkkBgA
 
 
