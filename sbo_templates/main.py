@@ -58,7 +58,7 @@ class SBoTemplates(object):
         self.pwd = os.getcwd() + "/"
         self.slack_desc_text = []
         self.slack_desc_data = []
-        # appname.info
+        # aboname.info
         self._version = '""'
         self._homepage = '""'
         self._download = '""'
@@ -66,7 +66,7 @@ class SBoTemplates(object):
         self._download_x86_64 = '""'
         self._md5sum_x86_64 = '""'
         self._requires = '""'
-        # appname.desktop
+        # sboname.desktop
         self._name = self.args[0]
         self._comment = ""
         self._exec = "/usr/bin/{0}".format(self.args[0])
