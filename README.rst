@@ -34,7 +34,7 @@ Asciicast
 ----------
 
 .. image:: https://asciinema.org/a/ldP2nLdyDnvmw1JD75WvkkBgA
-    :width: 250
+    :width: 150
     :target: https://asciinema.org/a/ldP2nLdyDnvmw1JD75WvkkBgA
 
 
