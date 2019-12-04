@@ -86,7 +86,7 @@ class SBoTemplates(object):
         elif len(self.args) == 1 and self.args[0] in ["-v", "--version"]:
             self.__version()
         elif len(self.args) < 1:
-            self.args = ['appname']
+            self.args = ['sboname']
 
     def __version(self):
         """version info
@@ -98,7 +98,7 @@ class SBoTemplates(object):
         """optional arguments
         """
         args = [
-            "Usage: sbotmp <application>\n",
+            "Usage: sbotmp <sbo_name>\n",
             "Optional arguments:",
             "  -h, --help           display this help and exit",
             "  -v, --version        print version and exit",

@@ -60,7 +60,7 @@ Usage
 
 .. code-block:: bash
 
-    Usage: sbotmp <application_name>
+    Usage: sbotmp <sbo_name>
 
     Optional arguments:
       -h, --help           display this help and exit
