@@ -34,7 +34,7 @@ Asciicast
 ----------
 
 .. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/asciicast_img.png
-    :width: 200
+    :width: 100
     :target: https://asciinema.org/a/ldP2nLdyDnvmw1JD75WvkkBgA
 
 
@@ -83,27 +83,27 @@ Screenshots
 -----------
 
 .. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/sbo-templates-1.png
-    :width: 200
+    :width: 100
     :target: https://gitlab.com/dslackw/sbo-templates
 
 
 .. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/sbo-templates-2.png
-    :width: 200
+    :width: 100
     :target: https://gitlab.com/dslackw/sbo-templates
 
 
 .. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/sbo-templates-3.png
-    :width: 200
+    :width: 100
     :target: https://gitlab.com/dslackw/sbo-templates
 
 
 .. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/sbo-templates-4.png
-    :width: 200
+    :width: 100
     :target: https://gitlab.com/dslackw/sbo-templates
 
  
 .. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/sbo-templates-5.png
-    :width: 200
+    :width: 100
     :target: https://gitlab.com/dslackw/sbo-templates
 
 
