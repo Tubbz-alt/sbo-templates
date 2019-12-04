@@ -35,7 +35,7 @@ Asciicast
 
 .. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/asciicast_img.png
     :width: 100
-    :target: https://asciinema.org/a/ldP2nLdyDnvmw1JD75WvkkBgA
+    :target: https://asciinema.org/a/z00ad6EfCSfNzrBczCLcl6uR8
 
 
 Install
