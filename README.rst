@@ -33,7 +33,7 @@ Features
 Asciicast
 ----------
 
-.. image:: https://gitlab.com/dslackw/images/raw/master/sbo-templates/asciicast_img.png
+.. image:: https://asciinema.org/a/z00ad6EfCSfNzrBczCLcl6uR8
     :width: 100
     :target: https://asciinema.org/a/z00ad6EfCSfNzrBczCLcl6uR8
 
