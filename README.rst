@@ -29,6 +29,14 @@ Features
 - Warning for failed checksumss.
 - Auto-update the sources checksums.
 
+
+Asciicast
+----------
+
+.. image:: https://asciinema.org/a/ldP2nLdyDnvmw1JD75WvkkBgA
+    :target: https://asciinema.org/a/ldP2nLdyDnvmw1JD75WvkkBgA
+
+
 Install
 -------
 
