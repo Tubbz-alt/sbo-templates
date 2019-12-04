@@ -14,7 +14,7 @@
 About
 -----
 
-sbo-templates creates easy, fast and safe SlackBuilds scripts
+sbo-templates it's a tool that creates easy, fast and safe SlackBuilds scripts
 
 Features
 --------
@@ -26,8 +26,8 @@ Features
 - Auto-import data from .info file 
   (such as maintainer name, appllication name, version etc.)
 - Autocorrect the quotation mark in the .info file
-- Warning for failed checksum.
-- Auto-update the source checksum
+- Warning for failed checksumss.
+- Auto-update the sources checksums.
 
 Install
 -------
@@ -60,15 +60,15 @@ Usage
 
 .. code-block:: bash
 
-    Usage: sbotmp <application>
+    Usage: sbotmp <application_name>
 
     Optional arguments:
       -h, --help           display this help and exit
       -v, --version        print version and exit
 
 
-For a new project, you create at first a new folder with the same name with the project,
-for an existing project, come into the folder and start to edit. Enjoy!
+For a new project, you should create at first a new folder with the same name with the 
+project, for an existing project, come into the folder and start to edit. Enjoy!
 
 Screenshots
 -----------
