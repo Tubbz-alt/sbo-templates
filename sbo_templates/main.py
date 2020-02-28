@@ -3,7 +3,7 @@
 
 # main.py file is part of sbo-templates.
 
-# Copyright 2015-2019 Dimitris Zlatanidis <d.zlatanidis@gmail.com>
+# Copyright 2015-2020 Dimitris Zlatanidis <d.zlatanidis@gmail.com>
 # All rights reserved.
 
 # SBo tool for managing templates.
@@ -40,14 +40,13 @@ from sbo_templates.__metadata__ import __version__
 locale.setlocale(locale.LC_ALL, '')
 
 
-class SBoTemplates(object):
+class SBoTemplates:
     """SlackBuild Templates Class
     """
     def __init__(self):
         self.year = date.today().year
         self.d = Dialog(dialog="dialog")
-        self.d.set_background_title("SlackBuild.org Templates {0}".format(
-            __version__))
+        self.d.set_background_title(f"SlackBuild.org Templates {__version__}")
         self.args = sys.argv
         self.args.pop(0)
         self.__cli()
@@ -797,13 +796,3 @@ class SBoTemplates(object):
         with open(self.pwd + self.filename, "w") as f:
             for line in self.data:
                 f.write(line + "\n")
-
-
-def main():
-
-    app = SBoTemplates()
-    app.menu()
-
-
-if __name__ == "__main__":
-    main()

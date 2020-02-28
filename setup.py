@@ -3,7 +3,7 @@
 
 # setup.py file is part of sbo-templates.
 
-# Copyright 2015-2019 Dimitris Zlatanidis <d.zlatanidis@gmail.com>
+# Copyright 2015-2020 Dimitris Zlatanidis <d.zlatanidis@gmail.com>
 # All rights reserved.
 
 # SBo tool for managing templates.
@@ -46,7 +46,9 @@ setup(
     author_email=__email__,
     url=__website__,
     package_data={"": ["LICENSE", "README.rst", "CHANGELOG"]},
-    install_requires=['pythondialog>=3.5.0'],
+    install_requires=[
+        'pythondialog>=3.5.0'
+    ],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: GNU General Public License v3 or later "
