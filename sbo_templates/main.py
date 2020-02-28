@@ -762,8 +762,6 @@ class SBoTemplates(object):
                 if f.endswith(s):
                     sources.update({f: self.sourceCheckSum(f)})
         return sources
-
-        # print list(set(sbo_files).difference(list_all_files))
         sys.exit()
 
     def checksum(self):
